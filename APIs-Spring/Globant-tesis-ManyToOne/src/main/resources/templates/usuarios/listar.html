@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/template ::head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<header th:replace="plantilla/template :: header">
+
+
+</header>
+<body>
+<!--/*@thymesVar id="titulo" type="java"*/-->
+<h1 th:text="${titulo}"></h1>
+<!--<p th:text="${usuarios}"></p>-->
+<div>
+
+    <table class="table table-sub-heading-color table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+            <th scope="col">Rol</th>
+            <th scope="col">Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="usuario :${usuarios}">
+            <th scope="row" th:text="${usuario.id}"></th>
+            <th scope="row" th:text="${usuario.nombre}"></th>
+            <th scope="row" th:text="${usuario.apellido}"></th>
+            <th scope="row" th:text="${usuario.email}"></th>
+            <th scope="row" th:text="${usuario.password}"></th>
+            <th scope="row" th:text="${usuario.rol}"></th>
+            <td>
+                <a class="btn btn-secondary" th:href="@{'/editar/'+ ${usuario.id}}">Editar</a>
+                &nbsp;
+                <a class="btn btn-danger" th:href="@{'/eliminar/'+ ${usuario.id}}">Eliminar</a>
+            </td>
+
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<footer th:replace="plantilla/template ::footer">
+
+</footer>
+<script type="text/javascript">
+    function limpiarCampos(){
+        window.location="/";
+    }
+
+</script>
+</body>
+</html>

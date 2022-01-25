@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/template ::head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<header th:replace="plantilla/template :: header">
+
+
+</header>
+<body>
+
+<div class="container ">
+    <div class="row">
+        <div class="col-md-6 col-lg-6 justify-content-center card">
+            <h1 class="text-center">Registro de usuario</h1>
+            <div class="card-body">
+
+                <form th:action="@{/guardar}" th:object="${usuario}" method="post">
+                    <div class="form-froup">
+                        <label>Nombre:</label>
+                        <input type="text" name="nombre" th:field="*{nombre}" class="form-control" placeholder="digite el nombre" required>
+
+                    </div>
+                    <div class="form-froup">
+                        <label>Apellido:</label>
+                        <input type="text" name="apellido" th:field="*{apellido}" class="form-control" placeholder="digite el apellido" required>
+
+                    </div>
+                    <div class="form-froup">
+                        <label>Email</label>
+                        <input type="email" name="email" th:field="*{email}" class="form-control" placeholder="digite el email" required>
+
+                    </div>
+                    <div class="form-froup">
+                        <label>Password:</label>
+                        <input type="password" name="password" th:field="*{password}" class="form-control" placeholder="digite la contraseña" required>
+
+                    </div>
+                  <div class="form-froup">
+                        <label>Rol:</label>
+                        <select id="rol" name="rol" th:field="*{rol}" class="form-control" required>
+
+<option th:each="rol : ${roles}" th:value="${rol.id}" th:text="${rol.nombre}"/>
+                        </select>
+
+                    </div>
+
+                    <div class="box-footer">
+                        <button class="btn btn-success">Guardar</button>
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+<footer th:replace="plantilla/template ::footer">
+
+</footer>
+<script type="text/javascript">
+    function limpiarCampos(){
+        window.location="/";
+    }
+
+</script>
+</body>
+</html>
