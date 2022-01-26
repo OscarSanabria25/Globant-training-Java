@@ -34,7 +34,7 @@ public class servicioController {
 //      servicio.crearServicio(serv);
 //        return serv;
 //    }
-    public Servicio actuializarServicio(@RequestBody Servicio serv, @PathVariable Long id){
+    public Servicio actualizarServicio(@RequestBody Servicio serv, @PathVariable Long id){
         Servicio servicioParaUpdate =servicio.buscarById(id);
         servicioParaUpdate.getId();
         servicioParaUpdate.setNombre(serv.getNombre());
