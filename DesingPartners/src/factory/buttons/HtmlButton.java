@@ -9,4 +9,9 @@ public class HtmlButton implements Button{
     public void onClick() {
         System.out.println("Click! Button says - 'Hello World!'");
     }
+
+    @Override
+    public void paint() {
+
+    }
 }
