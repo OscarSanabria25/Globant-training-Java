@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -17,12 +18,12 @@ import java.util.List;
 @RequestMapping("/usuarios")
 public class UsuarioController {
 @Autowired
-    private IUsuarioService iUsuarioService;
+    private IUsuarioService usuarioService;
 @Autowired
     private IRolService iRolService;
 @GetMapping("/")
 public String ListarUsuarios(Model model){
-    List<Usuario>listaUsuario =iUsuarioService.Listarusuarios();
+    List<Usuario>listaUsuario =usuarioService.Listarusuarios();
 model.addAttribute("titulo","Lista de usuarios");
 model.addAttribute("usuarios",listaUsuario );
 return "/usuarios/listar";
@@ -37,4 +38,8 @@ public  String crearUsuario(Model model){
 return "/usuarios/crearUsuario";
 }
 
+@PostMapping("/guardar")
+public  void  saveUser(Usuario usuario){
+    usuarioService.guardarUsuario(usuario);
+}
 }

@@ -11,5 +11,7 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
     @Query("SELECT p FROM Usuario p WHERE p.nombre LIKE %?1%" +
             "OR p.apellido LIKE %?1% " +
             "OR p.email LIKE %?1% ")
+
+
     public List<Usuario> findAll(String palabraClave);
 }

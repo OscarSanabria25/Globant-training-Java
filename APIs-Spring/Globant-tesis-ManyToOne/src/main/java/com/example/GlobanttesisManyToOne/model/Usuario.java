@@ -33,6 +33,29 @@ public class Usuario  implements Serializable {
     @Column(nullable = false, length = 60)
     private  String password;
 
+
+    public void setRol(Set<Rol> rol) {
+        this.rol = rol;
+    }
+
+    @ManyToMany
+    @JoinTable(
+            name = "usuarios_roles",
+            joinColumns = @JoinColumn(name = "usuario_id"),
+            inverseJoinColumns = @JoinColumn(name = "rol_id"))
+    private Set<Rol> rol;
+
+    public Usuario(String nombre, String apellido, String email, String password, Set<Rol> rol) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
+        this.password = password;
+        this.rol = rol;
+    }
+
+    public Usuario() {
+
+    }
     public Long getId() {
         return id;
     }
@@ -77,28 +100,6 @@ public class Usuario  implements Serializable {
         return rol;
     }
 
-    public void setRol(Set<Rol> rol) {
-        this.rol = rol;
-    }
-
-    @ManyToMany
-    @JoinTable(
-            name = "usuarios_roles",
-            joinColumns = @JoinColumn(name = "usuario_id"),
-            inverseJoinColumns = @JoinColumn(name = "rol_id"))
-    private Set<Rol> rol;
-
-    public Usuario(String nombre, String apellido, String email, String password, Set<Rol> rol) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.email = email;
-        this.password = password;
-        this.rol = rol;
-    }
-
-    public Usuario() {
-
-    }
     /*@ManyToOne
     @JoinColumn(name = "rol_id")
     private Rol rol;*/
