@@ -9,7 +9,6 @@ package HogDogDecorator;
 
         @Override
         public void addIngredients() {
-            addHotdog.addIngredients();
             setAddition(addHotdog);
         }
         private void  setAddition(IHotDogBasic iHotDogBasic){

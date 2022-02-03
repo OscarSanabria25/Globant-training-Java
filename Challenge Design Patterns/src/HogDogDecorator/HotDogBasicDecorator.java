@@ -9,6 +9,7 @@ public abstract class HotDogBasicDecorator implements IHotDogBasic {
     }
 
     public void addIngredients(){
+
         addHotdog.addIngredients();
     }
 

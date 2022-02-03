@@ -3,12 +3,12 @@ package HogDogDecorator;
 public class Pinapple extends HotDogBasicDecorator{
 
     public Pinapple(IHotDogBasic iHotDogBasic){
-     super(iHotDogBasic);
+
+        super(iHotDogBasic);
     }
 
     @Override
     public void addIngredients() {
-        addHotdog.addIngredients();
         setAddition(addHotdog);
     }
     private void  setAddition(IHotDogBasic iHotDogBasic){

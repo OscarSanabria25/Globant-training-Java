@@ -29,17 +29,13 @@ public class ShopPage implements Subject{
         this.price= p;
         notifyObserver();
     }
-    public void setName(String n){
-        this.name= n;
-        notifyObserver();
-    }
+
 
 
     @Override
     public void notifyObserver() {
         for(Observer observer : observers){
-            observer.update(price, name);
-
+            observer.update(1200, name);
         }
 
         System.out.println("ha llegado una notificación");

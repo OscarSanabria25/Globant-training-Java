@@ -9,10 +9,8 @@ public class MainHogDog {
         IHotDogBasic addBacon=new Bacon(new HotDog());
         IHotDogBasic addSauses=new Sauses(new HotDog());
 
-        addPineapple.addIngredients();
-        addPotato.addIngredients();
-        addBacon.addIngredients();
-        addSauses.addIngredients();
-        prueba.addIngredients();
+prueba.addIngredients();
+      addBacon.addIngredients();
+      addPineapple.addIngredients();
     }
 }
