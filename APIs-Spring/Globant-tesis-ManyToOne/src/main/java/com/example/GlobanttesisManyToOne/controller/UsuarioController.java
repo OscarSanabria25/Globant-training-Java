@@ -1,5 +1,6 @@
 package com.example.GlobanttesisManyToOne.controller;
 
+import com.example.GlobanttesisManyToOne.model.Persona;
 import com.example.GlobanttesisManyToOne.model.Rol;
 import com.example.GlobanttesisManyToOne.model.Usuario;
 import com.example.GlobanttesisManyToOne.service.IRolService;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -42,4 +44,29 @@ return "/usuarios/crearUsuario";
 public  void  saveUser(Usuario usuario){
     usuarioService.guardarUsuario(usuario);
 }
+
+
+
+
+
+    @GetMapping("/personas")
+    public String showmenu(Model model){
+        Persona p1 =new Persona();
+        p1.setId(1);
+        p1.setNombre("juan");
+
+        Persona p2 =new Persona();
+        p2.setId(2);
+        p2.setNombre("pedro");
+
+        var listaDePersonas= new ArrayList();
+
+        listaDePersonas.add(p1);
+        listaDePersonas.add(p2);
+
+        model.addAttribute("personas", listaDePersonas);
+
+        return "personas";
+    }
+
 }

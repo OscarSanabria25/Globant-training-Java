@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p th:text="${personas}"></p>
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>Apellido</th>
+
+    </tr>
+    <tr th:each="persona : ${personas}">
+        <!--/*@thymesVar id="id" type=""*/-->
+        <td th:text="${persona.id}">Mostrar Nombre</td>
+        <td th:text="${persona.nombre}">Apellido</td>
+
+    </tr>
+</table>
+</body>
