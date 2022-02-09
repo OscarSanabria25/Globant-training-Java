@@ -24,8 +24,8 @@ public class UsuarioController {
         model.addAttribute("palabraClave", palabraClave);
         return "index";
     }
-    //@GetMapping("/nuevo")
-    @RequestMapping("/nuevo")
+ @GetMapping("/nuevo")
+    //@RequestMapping("/nuevo")
     public String MostrarFormDeRegistro(Model model){
       Usuario usuario =new Usuario();
         model.addAttribute("usuario", usuario);
