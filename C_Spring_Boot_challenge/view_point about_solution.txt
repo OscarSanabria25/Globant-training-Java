@@ -1,0 +1,3 @@
+Una de las soluciones podría ser acudir a la inyección de dependencias para evitar reralizar una instacia
+cada ver que se quiera crear un nuevo objeto de un a impresora, tambien es bueno tener en cuenta una interfaz por default
+donde se especifique  los métodos principales y por medio de la implementación podemos agregar funcionalidades anexas o nuevos objetos.
