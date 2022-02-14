@@ -1,4 +1,4 @@
-package com.example.Challenge_Srping_and_Spring_boot.controller;
+package com.example.Challenge_Srping_and_Spring_boot.dao.controller;
 
 import com.example.Challenge_Srping_and_Spring_boot.dao.NewPrinter;
 import com.example.Challenge_Srping_and_Spring_boot.dao.PrinterColor;

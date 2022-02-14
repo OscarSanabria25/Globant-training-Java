@@ -14,8 +14,9 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in );
         System.out.println("Select someone option");
-        System.out.println("1. print  b/w");
-        System.out.println("2. print color");
+
+        System.out.println("1. print color");
+        System.out.println("2. print  b/w");
         System.out.println("3. create a new printer");
         System.out.println("0. exit");
 
