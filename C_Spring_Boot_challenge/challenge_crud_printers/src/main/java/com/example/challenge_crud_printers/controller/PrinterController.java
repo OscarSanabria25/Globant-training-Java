@@ -17,6 +17,7 @@ public class PrinterController {
 
     @Autowired
     public PrinterServiceImpl printerService;
+
     @GetMapping("/printers")
     public String listAllC(Model model){
         List<Printer> printers=printerService.listAllPrinters();

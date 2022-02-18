@@ -29,7 +29,7 @@ public class PrinterController {
         return printerWhiteAndBlack.choisePrint();
     }
 
-    @PostMapping("/new")
+        @PostMapping("/new")
 
     public void  addPrint(NewPrinter printer){
         newPrinter.addPrinter("hp pc");

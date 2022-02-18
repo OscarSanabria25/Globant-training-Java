@@ -7,8 +7,6 @@ import java.util.List;
 
 public interface IPrinterService {
     List<Printer>listAllPrinters();
-    void  save(Printer printer);
-
     void savePrinter(Printer printer);
 
     Printer findByIdPrinter(int id);

@@ -12,23 +12,23 @@ public class PrinterServiceImpl implements IPrinterService {
 
     @Autowired
     public PriterRepository priterRepository;
+
     @Override
     public List<Printer> listAllPrinters() {
+
         return priterRepository.findAll();
     }
 
-    @Override
-    public void save(Printer printer) {
-
-    }
 
     @Override
     public void savePrinter(Printer printer) {
+
         priterRepository.save(printer);
     }
 
     @Override
     public Printer findByIdPrinter(int id) {
-        return priterRepository.findById(id).get();
+        return
+                priterRepository.findById(id).get();
     }
 }
